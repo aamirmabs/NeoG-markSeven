@@ -1,0 +1,48 @@
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #182628;
+}
+
+textarea.form-control {
+  font-size: xx-large;
+}
+
+.btn {
+  margin: 1%;
+}
+
+.header-footer {
+  background-color: #fee227;
+  padding: 1rem;
+}
+
+.user-input {
+  font-family: "Caveat", cursive;
+  padding: 2%;
+}
+
+.btn-row {
+  padding: 1em;
+}
+
+.output-row {
+  background-color: rgb(255, 254, 170);
+  padding: 2%;
+}
+
+#output {
+  font-family: "Indie Flower", cursive;
+  font-size: 5rem;
+}
+
+#minion-says {
+  font-family: "Great Vibes", cursive;
+}
+
+#reset-msg {
+  padding: 5px;
+  display: none;
+}
