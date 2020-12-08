@@ -126,6 +126,10 @@ function hideElement(ele) {
   ele.style.visibility = "hidden";
 }
 
+function hideAskResetBtn() {
+  askResetBtn.style.visibility = "hidden";
+}
+
 function changePirateGIF() {
   // changing the images
   pirateGIF.src = getRandomItemFrom(pirateGIFSet);
