@@ -3,6 +3,7 @@ var pirateGIF = document.getElementById("pirate-gif");
 var inputBox = document.getElementById("translate-input-box");
 var translateBtn = document.getElementById("translate-btn");
 var resetBtn = document.getElementById("reset-btn");
+var askResetBtn = document.getElementById("ask-reset-btn");
 var resetMsg = document.getElementById("reset-msg");
 var pirateSaysImg = document.getElementById("pirate-img");
 var pirateSaysText = document.getElementById("pirate-says");
@@ -18,21 +19,21 @@ var outputOG = output.innerHTML;
 
 // setting up variables for tracking images and names
 var pirateNameSet = [
-  "Bob ",
-  "Carl ",
-  "Dave ",
-  "Donny ",
-  "Jerry ",
-  "Jorge ",
-  "Kevin ",
-  "Lance ",
-  "Mark ",
-  "Paul ",
-  "Phil ",
-  "Steve ",
-  "Stuart ",
-  "Tom ",
-  "Tim ",
+  "Captain Bob ",
+  "Captain Carl ",
+  "Captain Dave ",
+  "Captain Donny ",
+  "Captain Jerry ",
+  "Captain Jorge ",
+  "Captain Kevin ",
+  "Captain Lance ",
+  "Captain Mark ",
+  "Captain Paul ",
+  "Captain Phil ",
+  "Captain Steve ",
+  "Captain Stuart ",
+  "Captain Tom ",
+  "Captain Tim ",
 ];
 var pirateNameSetLength = pirateNameSet.length;
 var pirateNameSetCount = 0;
@@ -79,6 +80,7 @@ function getUserInput() {
 
 function updateOutput(msg) {
   setNextPirateSaysImg();
+  manageAskResetBtn();
 
   // updating pirate says message
   var newPirateSaysText =
@@ -92,6 +94,13 @@ function updateOutput(msg) {
   // updating translated message
   var text = `"${msg}"`;
   output.innerText = text;
+}
+
+function manageAskResetBtn() {
+  showAskResetBtn();
+  setTimeout(function () {
+    hideAskResetBtn();
+  }, 5000);
 }
 
 function handleError(err) {
@@ -119,13 +128,15 @@ function hideResetSuccessMsg() {
   resetMsg.style.display = "none";
 }
 
-function reset() {
-  showResetSuccessMsg();
+function showAskResetBtn() {
+  askResetBtn.style.visibility = "visible";
+}
 
-  inputBox.value = inputBoxOG;
-  pirateSaysText.innerHTML = pirateSaysOG;
-  output.innerHTML = outputOG;
+function hideAskResetBtn() {
+  askResetBtn.style.visibility = "hidden";
+}
 
+function changePirateGIF() {
   // changing the images
   pirateGIF.src = pirateGIFSet[pirateGIFSetCount];
   pirateGIFSetCount++;
@@ -136,6 +147,16 @@ function reset() {
   if (pirateGIFSetCount == pirateGIFSetLength) {
     pirateGIFSetCount = 0;
   }
+}
+
+function reset() {
+  showResetSuccessMsg();
+
+  inputBox.value = inputBoxOG;
+  pirateSaysText.innerHTML = pirateSaysOG;
+  output.innerHTML = outputOG;
+
+  changePirateGIF();
 
   setTimeout(function () {
     hideResetSuccessMsg();
@@ -143,9 +164,9 @@ function reset() {
 }
 
 // setting up API string
-var url = "https://api.funtranslations.com/translate/pirate.json";
+// var url = "https://api.funtranslations.com/translate/pirate.json";
 // Tanay's API for testing
-// var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 var apiCallString = `${url}?text=${getUserInput()}`;
 
@@ -164,6 +185,13 @@ function fetchTranslation() {
 }
 
 // calling the API on click
-
 translateBtn.addEventListener("click", fetchTranslation);
+
+// wiring other event handlers
+translateBtn.addEventListener("click", manageAskResetBtn);
+
 resetBtn.addEventListener("click", reset);
+
+askResetBtn.addEventListener("click", reset);
+askResetBtn.addEventListener("click", changePirateGIF);
+askResetBtn.addEventListener("click", hideAskResetBtn);
