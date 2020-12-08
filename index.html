@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>markSix - Minion Speak</title>
+    <title>markSeven - Pirate Speak</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -18,19 +18,24 @@
 
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <!-- minion reply -->
+    <!-- header and footer -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- pirate reply -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap"
       rel="stylesheet"
     />
     <!-- user input -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap"
       rel="stylesheet"
     />
-    <!-- minion says -->
+    <!-- pirate says -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
@@ -41,7 +46,7 @@
     <div class="container-fluid">
       <div class="row text-center header-footer">
         <div class="col">
-          <h1>markSix - Minion Speak</h1>
+          <h1>markSix - Pirate Speak</h1>
         </div>
       </div>
     </div>
@@ -52,12 +57,12 @@
         <div class="col-md-4">
           <div style="width: 100%">
             <img
-              src="https://media.giphy.com/media/13GIgrGdslD9oQ/giphy.gif"
+              src="https://media.giphy.com/media/ozrZTb6qiC4hy/giphy.gif"
               alt="User may type message here..."
               width="100%"
-              id="minion-gif"
+              id="pirate-gif"
             />
-            <h1 class="text-center">Do you want to speak Minion?</h1>
+            <h1 class="text-center">Do you want to speak Pirate?</h1>
           </div>
         </div>
         <div class="col-md-7 col-md-offset-1">
@@ -69,7 +74,7 @@
           ></textarea>
           <div class="text-center btn-row">
             <button class="btn btn-lg btn-success" id="translate-btn">
-              Translate To Minion
+              Translate To Pirate
             </button>
             <button class="btn btn-lg btn-danger" id="reset-btn">Reset</button>
           </div>
@@ -81,22 +86,33 @@
     </div>
 
     <!-- OUTPUT -->
-    <div class="container-fluid output-row text-center">
+    <div class="container-fluid output-row">
       <div class="row">
-        <div class="col-md-12">
-          <img src="./img/minion0.png" alt="" srcset="" id="minion-img" />
-          <h1 id="minion-says">Type your message and Gary the Minion will</h1>
+        <div class="col-md-12 text-center">
+          <img src="./img/pirate0.png" alt="" srcset="" id="pirate-img" />
+          <h1 id="pirate-says">Type your message and Gary the Pirate will</h1>
           <p id="output">"translate it for you..."</p>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <button
+            type="button"
+            class="btn btn-danger btn-lg"
+            id="ask-reset-btn"
+          >
+            Try Another
+          </button>
         </div>
       </div>
     </div>
+    <div class="container-fluid"></div>
 
     <!-- FOOTER -->
     <div class="container-fluid text-center header-footer">
       <div class="row">
         <div class="col-md-12">
-          <a href="https://github.com/aamyear/NeoG-markSix" class=""
-            ><button class="btn btn-lg btn-info" id="reset-btn">
+          <a href="https://github.com/aamyear/NeoG-markSeven" class=""
+            ><button class="btn btn-lg btn-success" id="reset-btn">
               <img
                 src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_github_2-64.png"
                 style="height: 1em"

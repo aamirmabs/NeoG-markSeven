@@ -12,37 +12,46 @@ textarea.form-control {
 
 .btn {
   margin: 1%;
+  font-size: 2em;
 }
 
 .header-footer {
-  background-color: #fee227;
+  background-color: #76b6ff;
   padding: 1rem;
+  font-family: "Open Sans", sans-serif;
 }
 
 .user-input {
-  font-family: "Caveat", cursive;
+  font-family: "Seaweed Script", cursive;
   padding: 2%;
 }
 
 .btn-row {
   padding: 1em;
+  align-content: center;
 }
 
 .output-row {
-  background-color: rgb(255, 254, 170);
+  background-color: rgb(200, 229, 255);
   padding: 2%;
+  text-align: center;
 }
 
 #output {
-  font-family: "Indie Flower", cursive;
+  font-family: "Cabin Sketch", cursive;
   font-size: 5rem;
 }
 
-#minion-says {
-  font-family: "Great Vibes", cursive;
+#pirate-says {
+  font-family: "Nerko One", cursive;
 }
 
 #reset-msg {
   padding: 5px;
   display: none;
+}
+
+#ask-reset-btn {
+  padding: 5px;
+  visibility: hidden;
 }
