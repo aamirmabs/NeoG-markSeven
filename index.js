@@ -35,8 +35,6 @@ var pirateNameSet = [
   "Captain Tom ",
   "Captain Tim ",
 ];
-var pirateNameSetLength = pirateNameSet.length;
-var pirateNameSetCount = 0;
 
 var pirateGIFSet = [
   "https://media.giphy.com/media/9OZVbCmFSWPrnB3P8t/giphy.gif",
@@ -55,8 +53,6 @@ var pirateGIFSet = [
   "https://media.giphy.com/media/LmrHCVQCIVr4qnRDbW/giphy.gif",
   "https://media.giphy.com/media/JQLtNJwlfnQ0S1frLd/giphy.gif",
 ];
-var pirateGIFSetLength = pirateGIFSet.length;
-var pirateGIFSetCount = 0;
 
 var pirateSaysImgSet = [
   "/img/pirate0.png",
@@ -70,8 +66,6 @@ var pirateSaysImgSet = [
   "/img/pirate8.png",
   "/img/pirate9.png",
 ];
-var pirateSaysImgSetLength = pirateSaysImgSet.length;
-var pirateSaysImgSetCount = 0;
 
 // setting up functions
 function getUserInput() {
@@ -84,11 +78,7 @@ function updateOutput(msg) {
 
   // updating pirate says message
   var newPirateSaysText =
-    pirateNameSet[pirateNameSetCount] + "the Pirate says...";
-  pirateNameSetCount++;
-  if (pirateNameSetCount == pirateNameSetLength) {
-    pirateNameSetCount = 0;
-  }
+    "Pirate " + getRandomItemFrom(pirateNameSet) + " says...";
   pirateSaysText.innerHTML = newPirateSaysText;
 
   // updating translated message
@@ -111,13 +101,16 @@ function handleError(err) {
 // setting up helper functions
 function setNextPirateSaysImg() {
   var origin = window.location.origin;
-  var imgSrc = origin + pirateSaysImgSet[pirateSaysImgSetCount];
+  var imgSrc = origin + getRandomItemFrom(pirateSaysImgSet);
   pirateSaysImg.src = imgSrc;
-  pirateSaysImgSetCount++;
+}
 
-  if (pirateSaysImgSetCount == pirateSaysImgSetLength) {
-    pirateSaysImgSetCount = 0;
-  }
+function getRandomItemFrom(arr) {
+  var len = arr.length;
+
+  var random = Math.floor(Math.random() * len);
+
+  return arr[random];
 }
 
 function showResetSuccessMsg() {
@@ -138,15 +131,8 @@ function hideAskResetBtn() {
 
 function changePirateGIF() {
   // changing the images
-  pirateGIF.src = pirateGIFSet[pirateGIFSetCount];
-  pirateGIFSetCount++;
-
+  pirateGIF.src = getRandomItemFrom(pirateGIFSet);
   setNextPirateSaysImg();
-
-  // check if counters need to be reset
-  if (pirateGIFSetCount == pirateGIFSetLength) {
-    pirateGIFSetCount = 0;
-  }
 }
 
 function reset() {
