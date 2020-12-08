@@ -73,6 +73,7 @@ function getUserInput() {
 }
 
 function updateOutput(msg) {
+  changePirateGIF();
   setNextPirateSaysImg();
   manageAskResetBtn();
 
@@ -87,9 +88,9 @@ function updateOutput(msg) {
 }
 
 function manageAskResetBtn() {
-  showAskResetBtn();
+  showElement(askResetBtn);
   setTimeout(function () {
-    hideAskResetBtn();
+    hideElement(askResetBtn);
   }, 5000);
 }
 
@@ -107,26 +108,16 @@ function setNextPirateSaysImg() {
 
 function getRandomItemFrom(arr) {
   var len = arr.length;
-
   var random = Math.floor(Math.random() * len);
-
   return arr[random];
 }
 
-function showResetSuccessMsg() {
-  resetMsg.style.display = "block";
+function showElement(ele) {
+  ele.style.visibility = "visible";
 }
 
-function hideResetSuccessMsg() {
-  resetMsg.style.display = "none";
-}
-
-function showAskResetBtn() {
-  askResetBtn.style.visibility = "visible";
-}
-
-function hideAskResetBtn() {
-  askResetBtn.style.visibility = "hidden";
+function hideElement(ele) {
+  ele.style.visibility = "hidden";
 }
 
 function changePirateGIF() {
@@ -136,7 +127,7 @@ function changePirateGIF() {
 }
 
 function reset() {
-  showResetSuccessMsg();
+  showElement(resetMsg);
 
   inputBox.value = inputBoxOG;
   pirateSaysText.innerHTML = pirateSaysOG;
@@ -145,7 +136,7 @@ function reset() {
   changePirateGIF();
 
   setTimeout(function () {
-    hideResetSuccessMsg();
+    hideElement(resetMsg);
   }, 4000);
 }
 
