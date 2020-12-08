@@ -13,6 +13,18 @@ textarea.form-control {
 .btn {
   margin: 1%;
   font-size: 2em;
+
+  -webkit-box-shadow: 0px 11px 30px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 11px 30px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 11px 30px -5px rgba(0, 0, 0, 0.2);
+
+  transition: 0.5s ease-in-out;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0px 11px 16px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 11px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 11px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header-footer {
@@ -35,6 +47,19 @@ textarea.form-control {
   background-color: rgb(200, 229, 255);
   padding: 2%;
   text-align: center;
+}
+
+#pirate-gif {
+  -webkit-box-shadow: 0px 11px 19px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 11px 19px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 11px 19px 10px rgba(0, 0, 0, 0.2);
+
+  transition: 0.5s ease-in-out;
+}
+#pirate-gif:hover {
+  -webkit-box-shadow: 0px 11px 16px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 11px 16px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 11px 16px -5px rgba(0, 0, 0, 0.2);
 }
 
 #output {
