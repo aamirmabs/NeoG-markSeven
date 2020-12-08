@@ -1,23 +1,23 @@
 // setting up elements
-var minionGIF = document.getElementById("minion-gif");
+var pirateGIF = document.getElementById("pirate-gif");
 var inputBox = document.getElementById("translate-input-box");
 var translateBtn = document.getElementById("translate-btn");
 var resetBtn = document.getElementById("reset-btn");
 var resetMsg = document.getElementById("reset-msg");
-var minionSaysImg = document.getElementById("minion-img");
-var minionSaysText = document.getElementById("minion-says");
+var pirateSaysImg = document.getElementById("pirate-img");
+var pirateSaysText = document.getElementById("pirate-says");
 var output = document.getElementById("output");
 
 // saving original values
-var minionGIFOG = minionGIF.src;
+var pirateGIFOG = pirateGIF.src;
 var inputBoxOG = inputBox.value;
-var minionImgOG = minionSaysImg.src;
-console.log(minionImgOG);
-var minionSaysOG = minionSaysText.innerHTML;
+var pirateImgOG = pirateSaysImg.src;
+console.log(pirateImgOG);
+var pirateSaysOG = pirateSaysText.innerHTML;
 var outputOG = output.innerHTML;
 
 // setting up variables for tracking images and names
-var minionNameSet = [
+var pirateNameSet = [
   "Bob ",
   "Carl ",
   "Dave ",
@@ -34,10 +34,10 @@ var minionNameSet = [
   "Tom ",
   "Tim ",
 ];
-var minionNameSetLength = minionNameSet.length;
-var minionNameSetCount = 0;
+var pirateNameSetLength = pirateNameSet.length;
+var pirateNameSetCount = 0;
 
-var minionGIFSet = [
+var pirateGIFSet = [
   "https://media.giphy.com/media/YAlhwn67KT76E/giphy.gif",
   "https://media.giphy.com/media/spHCUbRqG4cjS/giphy.gif",
   "https://media.giphy.com/media/TXJiSN8vCERuE/giphy.gif",
@@ -54,23 +54,23 @@ var minionGIFSet = [
   "https://media.giphy.com/media/l3HBbltOYjoNq/giphy.gif",
   "https://media.giphy.com/media/l3HBbltOYjoNq/giphy.gif",
 ];
-var minionGIFSetLength = minionGIFSet.length;
-var minionGIFSetCount = 0;
+var pirateGIFSetLength = pirateGIFSet.length;
+var pirateGIFSetCount = 0;
 
-var minionSaysImgSet = [
-  "/img/minion0.png",
-  "/img/minion1.png",
-  "/img/minion2.png",
-  "/img/minion3.png",
-  "/img/minion4.png",
-  "/img/minion5.png",
-  "/img/minion6.png",
-  "/img/minion7.png",
-  "/img/minion8.png",
-  "/img/minion9.png",
+var pirateSaysImgSet = [
+  "/img/pirate0.png",
+  "/img/pirate1.png",
+  "/img/pirate2.png",
+  "/img/pirate3.png",
+  "/img/pirate4.png",
+  "/img/pirate5.png",
+  "/img/pirate6.png",
+  "/img/pirate7.png",
+  "/img/pirate8.png",
+  "/img/pirate9.png",
 ];
-var minionSaysImgSetLength = minionSaysImgSet.length;
-var minionSaysImgSetCount = 0;
+var pirateSaysImgSetLength = pirateSaysImgSet.length;
+var pirateSaysImgSetCount = 0;
 
 // setting up functions
 function getUserInput() {
@@ -78,16 +78,16 @@ function getUserInput() {
 }
 
 function updateOutput(msg) {
-  setNextMinionSaysImg();
+  setNextPirateSaysImg();
 
-  // updating minion says message
-  var newMinionSaysText =
-    minionNameSet[minionNameSetCount] + "the Minion says...";
-  minionNameSetCount++;
-  if (minionNameSetCount == minionNameSetLength) {
-    minionNameSetCount = 0;
+  // updating pirate says message
+  var newPirateSaysText =
+    pirateNameSet[pirateNameSetCount] + "the Pirate says...";
+  pirateNameSetCount++;
+  if (pirateNameSetCount == pirateNameSetLength) {
+    pirateNameSetCount = 0;
   }
-  minionSaysText.innerHTML = newMinionSaysText;
+  pirateSaysText.innerHTML = newPirateSaysText;
 
   // updating translated message
   var text = `"${msg}"`;
@@ -100,14 +100,14 @@ function handleError(err) {
 }
 
 // setting up helper functions
-function setNextMinionSaysImg() {
+function setNextPirateSaysImg() {
   var origin = window.location.origin;
-  var imgSrc = origin + minionSaysImgSet[minionSaysImgSetCount];
-  minionSaysImg.src = imgSrc;
-  minionSaysImgSetCount++;
+  var imgSrc = origin + pirateSaysImgSet[pirateSaysImgSetCount];
+  pirateSaysImg.src = imgSrc;
+  pirateSaysImgSetCount++;
 
-  if (minionSaysImgSetCount == minionSaysImgSetLength) {
-    minionSaysImgSetCount = 0;
+  if (pirateSaysImgSetCount == pirateSaysImgSetLength) {
+    pirateSaysImgSetCount = 0;
   }
 }
 
@@ -123,18 +123,18 @@ function reset() {
   showResetSuccessMsg();
 
   inputBox.value = inputBoxOG;
-  minionSaysText.innerHTML = minionSaysOG;
+  pirateSaysText.innerHTML = pirateSaysOG;
   output.innerHTML = outputOG;
 
   // changing the images
-  minionGIF.src = minionGIFSet[minionGIFSetCount];
-  minionGIFSetCount++;
+  pirateGIF.src = pirateGIFSet[pirateGIFSetCount];
+  pirateGIFSetCount++;
 
-  setNextMinionSaysImg();
+  setNextPirateSaysImg();
 
   // check if counters need to be reset
-  if (minionGIFSetCount == minionGIFSetLength) {
-    minionGIFSetCount = 0;
+  if (pirateGIFSetCount == pirateGIFSetLength) {
+    pirateGIFSetCount = 0;
   }
 
   setTimeout(function () {
@@ -143,7 +143,7 @@ function reset() {
 }
 
 // setting up API string
-var url = "https://api.funtranslations.com/translate/minion.json";
+var url = "https://api.funtranslations.com/translate/pirate.json";
 // Tanay's API for testing
 // var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
