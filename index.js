@@ -10,10 +10,7 @@ var pirateSaysText = document.getElementById("pirate-says");
 var output = document.getElementById("output");
 
 // saving original values
-var pirateGIFOG = pirateGIF.src;
 var inputBoxOG = inputBox.value;
-var pirateImgOG = pirateSaysImg.src;
-console.log(pirateImgOG);
 var pirateSaysOG = pirateSaysText.innerHTML;
 var outputOG = output.innerHTML;
 
@@ -67,7 +64,7 @@ var pirateSaysImgSet = [
   "/img/pirate9.png",
 ];
 
-// setting up functions
+// setting up main functions
 function getUserInput() {
   return encodeURI(inputBox.value);
 }
@@ -87,43 +84,9 @@ function updateOutput(msg) {
   output.innerText = text;
 }
 
-function manageAskResetBtn() {
-  showElement(askResetBtn);
-  setTimeout(function () {
-    hideElement(askResetBtn);
-  }, 5000);
-}
-
 function handleError(err) {
   console.log("Oops... there's an issue:");
   console.log(err);
-}
-
-// setting up helper functions
-function setNextPirateSaysImg() {
-  var origin = window.location.origin;
-  var imgSrc = origin + getRandomItemFrom(pirateSaysImgSet);
-  pirateSaysImg.src = imgSrc;
-}
-
-function getRandomItemFrom(arr) {
-  var len = arr.length;
-  var random = Math.floor(Math.random() * len);
-  return arr[random];
-}
-
-function showElement(ele) {
-  ele.style.visibility = "visible";
-}
-
-function hideElement(ele) {
-  ele.style.visibility = "hidden";
-}
-
-function changePirateGIF() {
-  // changing the images
-  pirateGIF.src = getRandomItemFrom(pirateGIFSet);
-  setNextPirateSaysImg();
 }
 
 function reset() {
@@ -140,10 +103,47 @@ function reset() {
   }, 4000);
 }
 
+// HTML element handler functions
+
+function manageAskResetBtn() {
+  showElement(askResetBtn);
+  setTimeout(function () {
+    hideElement(askResetBtn);
+  }, 5000);
+}
+
+function setNextPirateSaysImg() {
+  var origin = window.location.origin;
+  var imgSrc = origin + getRandomItemFrom(pirateSaysImgSet);
+  pirateSaysImg.src = imgSrc;
+}
+
+function showElement(ele) {
+  ele.style.visibility = "visible";
+}
+
+function hideElement(ele) {
+  ele.style.visibility = "hidden";
+}
+
+function changePirateGIF() {
+  // changing the images
+  pirateGIF.src = getRandomItemFrom(pirateGIFSet);
+  setNextPirateSaysImg();
+}
+
+// setting up helper functions
+
+function getRandomItemFrom(arr) {
+  var len = arr.length;
+  var random = Math.floor(Math.random() * len);
+  return arr[random];
+}
+
 // setting up API string
-// var url = "https://api.funtranslations.com/translate/pirate.json";
+var url = "https://api.funtranslations.com/translate/pirate.json";
 // Tanay's API for testing
-var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+// var url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 var apiCallString = `${url}?text=${getUserInput()}`;
 
