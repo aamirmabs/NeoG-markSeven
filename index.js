@@ -38,21 +38,21 @@ var pirateNameSetLength = pirateNameSet.length;
 var pirateNameSetCount = 0;
 
 var pirateGIFSet = [
-  "https://media.giphy.com/media/YAlhwn67KT76E/giphy.gif",
-  "https://media.giphy.com/media/spHCUbRqG4cjS/giphy.gif",
-  "https://media.giphy.com/media/TXJiSN8vCERuE/giphy.gif",
-  "https://media.giphy.com/media/6onMzNPjtFeCI/giphy.gif",
-  "https://media.giphy.com/media/J4mwzGaDrRw3u/giphy.gif",
-  "https://media.giphy.com/media/uYSzR3wKSe5y/giphy.gif",
-  "https://media.giphy.com/media/XJ6A5OISSyWze/giphy.gif",
-  "https://media.giphy.com/media/oTMjNu3HjDvWw/giphy.gif",
-  "https://media.giphy.com/media/mQG72ZjcBFlwA/giphy.gif",
-  "https://media.giphy.com/media/1m7gwmBHRRlK/giphy.gif",
-  "https://media.giphy.com/media/OQeIIv41G9JU4/giphy.gif",
-  "https://media.giphy.com/media/xZx7ht7MH8Wqs/giphy.gif",
-  "https://media.giphy.com/media/aeM2gVUiP4WZ2/giphy.gif",
-  "https://media.giphy.com/media/l3HBbltOYjoNq/giphy.gif",
-  "https://media.giphy.com/media/l3HBbltOYjoNq/giphy.gif",
+  "https://media.giphy.com/media/9OZVbCmFSWPrnB3P8t/giphy.gif",
+  "https://media.giphy.com/media/j58rgORGZjYGxBsFS8/giphy.gif",
+  "https://media.giphy.com/media/hpWstKnxwfg3QHaBHe/giphy.gif",
+  "https://media.giphy.com/media/h1zamufHlE00YnHC7t/giphy.gif",
+  "https://media.giphy.com/media/ibqC2xeG4oN7RnG1ib/giphy.gif",
+  "https://media.giphy.com/media/jUii5pJUNEIXqxghbV/giphy.gif",
+  "https://media.giphy.com/media/L3KnfxSH66AmNdXG8S/giphy.gif",
+  "https://media.giphy.com/media/lMg0qBGvh0Hu0AMLj4/giphy.gif",
+  "https://media.giphy.com/media/h9i6KeMGniosU/giphy.gif",
+  "https://media.giphy.com/media/YFGLhHE5WG4QCEr6zE/giphy.gif",
+  "https://media.giphy.com/media/Lp4LTraj2QNeV1b6BL/giphy.gif",
+  "https://media.giphy.com/media/SSmDlehhBmGvm/giphy.gif",
+  "https://media.giphy.com/media/eJSD47AwilvqeE0aA3/giphy.gif",
+  "https://media.giphy.com/media/LmrHCVQCIVr4qnRDbW/giphy.gif",
+  "https://media.giphy.com/media/JQLtNJwlfnQ0S1frLd/giphy.gif",
 ];
 var pirateGIFSetLength = pirateGIFSet.length;
 var pirateGIFSetCount = 0;
